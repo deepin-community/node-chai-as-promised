@@ -1,0 +1,10 @@
+version=4
+opts=\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-chai-as-promised-$1.tar.gz/ \
+ https://github.com/domenic/chai-as-promised/tags .*/archive/.*/v?([\d\.]+).tar.gz group
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,component=types-chai-as-promised,ctype=nodejs,pgpmode=none" \
+ https://registry.npmjs.org/@types/chai-as-promised https://registry.npmjs.org/@types/chai-as-promised/-/chai-as-promised-([\d\.]+)@ARCHIVE_EXT@ checksum
